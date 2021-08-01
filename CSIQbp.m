@@ -1,8 +1,8 @@
 PLCC=zeros(6,100);
 SRCC=zeros(6,100);
 load CSIQdata;
-load('CSIQ.mat');   % load database information and DMOS data  加载数据库信息
-load('VNM.mat');     % load the feature detector, W  加载特征检测器
+load('CSIQ.mat');   % load database information and DMOS data  
+load('VNM.mat');     % load the feature detector, 
 
 B=[];
 BB=[];
@@ -11,7 +11,6 @@ disnum=6;
 
 
 for iPoint = 1:866
-    %READ A DISTORTED IMAGE  读取失真图像  E:\ImageDate\CSIQ\CSIQ\dst_imgs
     Id = imread(['F:\ImageDate\CSIQ\dst_imgs\' csiq_imTitle{iPoint,1} '\' csiq_imTitle{iPoint,2} '.' csiq_imTitle{iPoint,1} '.' num2str(csiq_imDMOS(iPoint,1)) '.png']);
     
     B1=CSIQVNM(Id, VNM);
@@ -24,7 +23,6 @@ for iPoint = 1:866
     
     Mos=[Mos MOS1];
 end
-%% 循环测试的次数
 
 
 for SS=1:5
@@ -41,15 +39,11 @@ for SS=1:5
     train_value=Mos(1:Trainnum);
     test_data=B(:,1:Trainnum);
     
-    %test_data=B(:,Trainnum+1:N);%测试700
+ 
     
     Ltag=tag(randIndex);
     
-    
-    % T=10;
-    % train_data=B;
-    % train_value=Mos;
-    % test_data=B;
+   
     K=size(train_data, 2);% K in paper
     
     
@@ -100,9 +94,9 @@ for SS=1:5
     
     dec=dec';
     
-    %剩余的训练结果和样本
+
     OB=dec;
-    %SB=Mos(Trainnum+1:N);%测试20%
+
     SB=Mos(1:Trainnum);
 
     PLCC(disnum+1,SS)=corr(SB',OB,'type','pearson') ;
@@ -115,7 +109,7 @@ for SS=1:5
     c=zeros(1,disnum+1);
     score=zeros(disnum+1,100);
     Tdmos=zeros(disnum+1,100);
-    %for a=1:(N-Trainnum-1)%测试20%
+
     for a=1:Trainnum
         b=a+Trainnum;
         c(Ltag(b))=c(Ltag(b))+1;
