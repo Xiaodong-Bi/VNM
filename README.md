@@ -71,7 +71,6 @@ For quality evaluation, you can just run 'DemoTest.m' as follows:
 4、Use the network to obtain the quality score
 	Score  = sim(net,Features)  % net and B represent network and feature respectively
 
-score = sim(net, B);  % net and B represent network and feature respectively
 =======================================================================
 
 -------------------------------------------------------------------------------------------------------------------------
