@@ -1,4 +1,4 @@
-
+H. -W. Chang, X. -D. Bi and C. Kai, "Blind Image Quality Assessment by Visual Neuron Matrix," in IEEE Signal Processing Letters, vol. 28, pp. 1803-1807, 2021, doi: 10.1109/LSP.2021.3106579.
 Blind image quality assessment by visual neuron matrix(VNM-NN)
 =======================================================================
 
